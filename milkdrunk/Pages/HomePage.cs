@@ -54,8 +54,8 @@ partial class HomePage
                     VerticalOptions = LayoutOptions.End,
                     Children =
                     {
-                        new Ad()
-                        .Height(60)
+                        //new Ad()
+                        //.Height(60)
                     }
                 }
             }

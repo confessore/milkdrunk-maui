@@ -72,17 +72,25 @@ class BasePageModel : INotifyPropertyChanged
     public virtual async Task OnAppearingAsync()
     {
         IsBusy = true;
-        System.Diagnostics.Debug.WriteLine("finding caregivers..");
-        var caregivers = await _caregiverDBService.FindAllAsync();
-        Caregiver = caregivers.FirstOrDefault();
-        if (Caregiver != null)
+        try
         {
-            if (Caregiver.Babies != null)
+            System.Diagnostics.Debug.WriteLine("finding caregivers..");
+            var caregivers = await _caregiverDBService.FindAllAsync();
+            Caregiver = caregivers.FirstOrDefault();
+            if (Caregiver != null)
             {
-                Baby = Caregiver.Babies.FirstOrDefault();
-                if (Baby != null)
-                    Title = BuildTitle();
+                if (Caregiver.Babies != null)
+                {
+                    Baby = Caregiver.Babies.FirstOrDefault();
+                    if (Baby != null)
+                        Title = BuildTitle();
+                }
             }
+        }
+        catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine(e.Message);
+            Title = string.Empty;
         }
         IsBusy = false;
     }

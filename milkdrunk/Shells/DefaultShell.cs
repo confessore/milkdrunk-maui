@@ -14,7 +14,7 @@ public partial class DefaultShell
         Items.Add(DefaultTabBar());
     }
 
-    Style DefaultStyle()
+    static Style DefaultStyle()
     {
         var style = new Style(typeof(Element));
         style.Setters.Add(new()
@@ -35,12 +35,12 @@ public partial class DefaultShell
         style.Setters.Add(new()
         {
             Property = Shell.DisabledColorProperty,
-            Value = Color.FromHex("#B4FFFFFF")
+            Value = Color.FromArgb("#B4FFFFFF")
         });
         style.Setters.Add(new()
         {
             Property = Shell.UnselectedColorProperty,
-            Value = Color.FromHex("#95FFFFFF")
+            Value = Color.FromArgb("#95FFFFFF")
         });
         style.Setters.Add(new()
         {
@@ -55,7 +55,7 @@ public partial class DefaultShell
         style.Setters.Add(new()
         {
             Property = Shell.TabBarUnselectedColorProperty,
-            Value = Color.FromHex("#95FFFFFF")
+            Value = Color.FromArgb("#95FFFFFF")
         });
         style.Setters.Add(new()
         {
@@ -83,7 +83,15 @@ public partial class DefaultShell
         return style;
     }
 
-    TabBar DefaultTabBar()
+    static ShellContent DefaultShellContent()
+    {
+        return new()
+        {
+            Content = DefaultTabBar()
+        };
+    }
+
+    static TabBar DefaultTabBar()
     {
         return new()
         {
@@ -98,56 +106,56 @@ public partial class DefaultShell
         };
     }
 
-    ShellContent HomeTab()
+    static ShellContent HomeTab()
     {
         return new()
         {
             Title = "home",
-            Icon = "home.png",
+            //Icon = "home.png",
             Route = "HomePage",
             ContentTemplate = new DataTemplate(typeof(HomePage)),
         };
     }
 
-    ShellContent ChangingTab()
+    static ShellContent ChangingTab()
     {
         return new()
         {
             Title = "changing",
-            Icon = "changing.png",
+            //Icon = "changing.png",
             Route = "ChangingPage",
             ContentTemplate = new DataTemplate(typeof(ChangingPage)),
         };
     }
 
-    ShellContent FeedingTab()
+    static ShellContent FeedingTab()
     {
         return new()
         {
             Title = "feeding",
-            Icon = "feeding.png",
+            //Icon = "feeding.png",
             Route = "FeedingPage",
             ContentTemplate = new DataTemplate(typeof(FeedingPage)),
         };
     }
 
-    ShellContent SleepingTab()
+    static ShellContent SleepingTab()
     {
         return new()
         {
             Title = "sleeping",
-            Icon = "sleeping.png",
+            //Icon = "sleeping.png",
             Route = "SleepingPage",
             ContentTemplate = new DataTemplate(typeof(SleepingPage)),
         };
     }
 
-    ShellContent PumpingTab()
+    static ShellContent PumpingTab()
     {
         return new()
         {
             Title = "pumping",
-            Icon = "pumping.png",
+            //Icon = "pumping.png",
             Route = "PumpingPage",
             ContentTemplate = new DataTemplate(typeof(PumpingPage)),
         };

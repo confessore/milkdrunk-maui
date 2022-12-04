@@ -1,5 +1,4 @@
 ﻿using Android.Content;
-using Android.Gms.Ads;
 using AndroidX.CoordinatorLayout.Widget;
 using Java.Lang;
 using Microsoft.Maui;
@@ -14,8 +13,8 @@ public class MauiAd : CoordinatorLayout
 
     }
 
-    AdView CreateAdView()
+    /*AdView CreateAdView()
     {
         return new(Context);
-    }
+    }*/
 }

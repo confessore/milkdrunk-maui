@@ -15,7 +15,7 @@ public partial class AdHandler : ViewHandler<Ad, MauiAd>
         base.ConnectHandler(platformView);
         if (PlatformView != null)
         {
-            CreateAdView();
+            //CreateAdView();
         }
         // Perform any control setup here
     }

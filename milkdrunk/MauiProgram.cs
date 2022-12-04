@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Controls.Hosting;
+﻿using CommunityToolkit.Maui.Markup;
+using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 using milkdrunk.Controls;
 using milkdrunk.Handlers;
@@ -12,6 +13,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiCommunityToolkitMarkup()
             .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

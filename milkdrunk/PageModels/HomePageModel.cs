@@ -10,6 +10,7 @@ class HomePageModel : BasePageModel
 {
     public HomePageModel()
     {
+        System.Diagnostics.Debug.WriteLine("home page..");
         MyBabiesCommand = new Command(MyBabies);
         CreateCaregroupCommand = new Command(CreateCaregroupAsync);
     }
